@@ -1,10 +1,13 @@
 import React from "react";
-import { View } from "react-native";
+import { View, Image } from "react-native";
+import styles from "./style";
 
-export function Image(){
-    return(
-        <View>
+export function Imagem({route, navigation}: any) {
+    const {img} = route.params;
 
+    return (
+        <View style={styles.container}>
+            <Image source={img} style={styles.fullImage} resizeMode="contain" />
         </View>
     );
 }

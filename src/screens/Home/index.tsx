@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Image, TouchableOpacity, FlatList } from "react-native";
 import styles from "./style";
+import { ComponentHeader } from "../../components";
 
 export function Home({navigation}: any){
     var imagens = [
@@ -13,14 +14,15 @@ export function Home({navigation}: any){
     ];
     
     const renderItem = ({ item }: any) => (
-            <TouchableOpacity style={styles.imageWrapper} onPress={() => {navigation.navigate("Image"), {img: item};}}>
-                <Image source={item} style={styles.image} />
-            </TouchableOpacity>
+        <TouchableOpacity style={styles.imageWrapper} activeOpacity={0.8} onPress={() => {navigation.navigate("Imagem", {img: item});}}>
+            <Image source={item} style={styles.image} />
+        </TouchableOpacity>
     )
 
 
     return(
         <View style={styles.container}>
+            <ComponentHeader />
             <FlatList 
                 data={imagens}
                 renderItem={renderItem}

@@ -1,5 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { ScreenHome, ScreenImage } from "../screens";
+import { Image } from "react-native"
+import styles from "../components/Header/style";
 
 const {Screen, Navigator} = createStackNavigator();
 
@@ -15,10 +17,14 @@ export default function StackRoutes(){
             />
 
             <Screen
-                name={"Image"}
+                name={"Imagem"}
                 component={ScreenImage}
                 options={{
-                    headerShown: false,
+                    animation: "fade",
+                    headerStyle: styles.container,
+                    headerBackTitleStyle: styles.title,
+                    headerTitleStyle: styles.title,
+                    headerBackImage: () => (<Image source={require("../../assets/left-arrow.png")} />),
                 }}
             />
         </Navigator>
