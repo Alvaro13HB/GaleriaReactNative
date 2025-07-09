@@ -1,4 +1,4 @@
-# Dupla:
+# Trio:
 
 ## - Álvaro
 ## - Pedro Cougo
